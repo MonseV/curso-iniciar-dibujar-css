@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #c2bbbb;
+}
+
+.bandera{
+  /*primera franja*/
+  margin: 70PX;
+  width: 200px;
+  height: 50px;
+  background-color: #AE1C28;
+  /*permite crear sombras como copias exactas del elemento*/
+  /*            x     y   color*/
+  box-shadow: 0px 50px #fff, 0 100px #21468B;
+}
