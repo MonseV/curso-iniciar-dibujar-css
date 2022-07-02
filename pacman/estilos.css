@@ -1,15 +1,32 @@
-#circulo-grande{
-  width: 100px;
-  height: 100px;
-  background-color: yellow;
-  border-radius: 50%;
-  box-shadow: 0px 0px 5px gray;
+*{
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.triangulo{/*se crea a base de bordes a partir de un cuadrado*/
-  width: 50px;
-  height: 0px;
-  border-right: 100px solid #fff;
-  border-top: 50px solid transparent;
-  border-bottom: 50px solid transparent;
+.pacman{
+  position: relative;
+  margin: 80px;
+  width: 100px;/*el elemento bloque ocupa el 100% ancho del contenedor*/
+  /*triangulo*/
+  border-top: 100px solid #ff0;
+  border-bottom: 100px solid #ff0;
+  border-left: 100px solid #ff0;
+  border-right: 100px solid transparent; /*transparente es para que no se muestre*/
+  /*circulo*/
+  border-radius: 50%;
+  /*                  x y difuminado */
+  filter: drop-shadow(0 0 4px);/*filtro*/
+}
+
+/*pseudo elemento -> primer hijo del elemento seleccionado*/
+.pacman::before{
+  content: ""; /*contenido vacío*/
+  position: absolute;
+  /*ojo*/
+  width: 15px;
+  height: 15px;
+  background-color: #000;
+  border-radius: 50%;
+  top:-45px;
+  right: 10px;
 }
