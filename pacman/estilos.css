@@ -1,0 +1,15 @@
+#circulo-grande{
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px gray;
+}
+
+.triangulo{/*se crea a base de bordes a partir de un cuadrado*/
+  width: 50px;
+  height: 0px;
+  border-right: 100px solid #fff;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+}
