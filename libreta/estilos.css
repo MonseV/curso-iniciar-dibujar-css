@@ -1,63 +1,61 @@
 * {
-  box-sizing: border-box;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body{
-  background-color: coral;
+  background-color: #f7996e;
 }
 
 .libreta{
-  margin: 40px;
-  /*caractula*/
-  width: 250px;
-  height: 350px;
-  background-color: darkviolet;
-  border-radius: 5%;
-  /*hojas*/
-  box-shadow: 10px 10px #fff;
-  /*sombra*/
-  filter: drop-shadow(10px 10px 5px);
+  /*pasta*/
+  width: 300px;
+  height: 400px;
+  background-color: #7765b5;
+  margin: 50px;
+  border-radius: 10px;
+  /*hojas y sombra*/
+  /*aparte del sombreado para las hojas, se aplica uno negro transparente*/
+  box-shadow: 10px 10px #fff,
+              20px 20px rgba(0, 0, 0, 0.116);
+  position: relative;
 }
 
-.espiral{
-  position: absolute;
-  width: 25px;
-  height: 5px;
-  background-color: green;
-  border-radius: 25%;
-  top: 43px;
-  left: -10px;
-  box-shadow: 0px 30px green,
-      0px 60px green,
-      0px 90px green,
-      0px 120px green,
-      0px 150px green,
-      0px 150px green,
-      0px 180px green,
-      0px 210px green,
-      0px 240px green;
-}
-
-.libreta::before{
-  content: "";
-  position: absolute;
-  /*hoyo*/
-  width: 15px;
-  height: 15px;
-  background-color: white;
+.circulos{
+  position: absolute;/*posicion en base a la libreta*/
+  top: 30px;/*se pone arriba*/
+  left: 7px;
+  /*hoyos*/
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
   border-radius: 50%;
-  /*hoyo*/
-  top:38px;
-  left: 5px;
-  box-shadow: 0px 30px white,
-              0px 60px white,
-              0px 90px white,
-              0px 120px white,
-              0px 150px white,
-              0px 150px white,
-              0px 180px white,
-              0px 210px white,
-              0px 240px white;
+  color: white;/*color de las sombras*/
+  box-shadow: 0 40px,
+              0 80px,
+              0 120px,
+              0 160px,
+              0 200px,
+              0 240px,
+              0 280px,
+              0 320px;
 }
 
+.linea{
+  position: absolute;/*posicion en base a los circulos*/
+  top: 4px;
+  left: -20px;
+  width: 30px;
+  height: 8px;
+  background-color: #319073;
+  border-radius: 10%;
+  color: #319073;
+  box-shadow: 0 40px,
+              0 80px,
+              0 120px,
+              0 160px,
+              0 200px,
+              0 240px,
+              0 280px,
+              0 320px;
+}
