@@ -1,0 +1,68 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.pokebola{
+  display: flex;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  /*primer circulo*/
+  border: 4px solid #000;
+  border-radius: 50%;
+  margin: 70px auto;
+  /*color gradiante*/
+  background-image: linear-gradient(#ff3e32 40%, #565658 40%,
+                                    #565658 60%, #ffffff 60%);
+  overflow: hidden; /*todo lo que se sobresalga se esconda*/
+}
+
+.linea{
+  position: absolute; /*se posiciona en base a la pokebola*/
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  /*primera linea*/
+  top: 40%; /*40% porque es el stop del primer gradiente*/
+  /*segunda linea*/
+  box-shadow: 0 44px;
+}
+
+.circulos{
+  margin: auto; /*para que se centre*/
+  width: 95px;
+  height: 95px;
+  border: 4px solid;
+  /*circulo de en medio*/
+  border-radius: 50%;
+  background-color: #565658;/*color del gradiente*/
+  z-index: 1;/*para que la linea se ponga por debajo del circulo*/
+  /*centra todos los hijos o los grid items*/
+  display: grid;
+  place-items: center;
+}
+
+.circulos::before{
+  width: 60px;
+  height: 60px;
+}
+
+.circulos::after{
+  width: 28px;
+  height: 28px;
+}
+
+.circulos::after,
+.circulos::before {/*los dos ultimos circulos*/
+  /*para que puedan existir deben tener un contenido*/
+  content: "";
+  background-color: #fff;
+  grid-column: 1/2;
+  /*ocupan de la primera a la segunda linea en columnas*/
+  grid-row: 1/2;
+  /*ocupan de la primera a la segunda linea en filas*/
+  border-radius: 50%;
+  border: inherit;
+  /*lo hereda de su padre circulos*/
+}
